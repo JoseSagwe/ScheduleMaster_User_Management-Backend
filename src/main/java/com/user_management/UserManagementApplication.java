@@ -12,10 +12,4 @@ public class UserManagementApplication {
 		SpringApplication.run(UserManagementApplication.class, args);
 	}
 
-	@Autowired
-	UserRepository userRepository;
-
-	public int registerNewUserServiceMethodMethod(String fname, String lname, String email, String password){
-		return userRepository.registerNewUser(fname,lname,email,password);
-	}
 }
