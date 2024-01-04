@@ -34,10 +34,10 @@ public class RegisterApiController {
         int result = userService.registerNewUserServiceMethod(first_name, last_name, email, hashed_password);
 
         if(result != 1){
-            return new ResponseEntity<>("Failed To Register User", HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>("failed", HttpStatus.BAD_REQUEST);
         }
 
-        return new ResponseEntity<>("User Registered Successfully ", HttpStatus.OK);
+        return new ResponseEntity<>("success", HttpStatus.OK);
 
     }
 }
