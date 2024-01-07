@@ -1,5 +1,6 @@
 package com.user_management.services;
 
+import com.user_management.models.User;
 import com.user_management.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,4 +24,15 @@ public class UserService {
     }
     // End of Check User Email Services Method
 
+    // Check User Password Services Method
+    public List<String> checkUserPasswordByEmail(String email){
+        return userRepository.checkUserPasswordByEmail(email);
+    }
+    // End of Check User Password Services Method
+
+    //Get User Details By Email
+    public User getUserDetailsByEmail(String email){
+        return userRepository.GetUserDetailsByEmail(email);
+    }
+    //End of Get User Details By Email
 }
