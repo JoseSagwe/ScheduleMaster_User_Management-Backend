@@ -17,6 +17,7 @@ public class RegisterApiController {
     @Autowired
     UserService userService;
 
+
     @PostMapping("/user/register")
     public ResponseEntity registerNewUser(@RequestParam("first_name")String first_name,
                                           @RequestParam("last_name")String last_name,
@@ -27,11 +28,14 @@ public class RegisterApiController {
             return new ResponseEntity<>("Please Complete all Fields", HttpStatus.BAD_REQUEST);
         }
 
+
         // Encrypt / Hash  Password:
         String hashed_password = BCrypt.hashpw(password, BCrypt.gensalt());
 
+
         // Register New User:
         int result = userService.registerNewUserServiceMethod(first_name, last_name, email, hashed_password);
+
 
         if(result != 1){
             return new ResponseEntity<>("failed", HttpStatus.BAD_REQUEST);
