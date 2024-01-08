@@ -1,6 +1,6 @@
 package com.user_management.models;
 
-public class login {
+public class Login {
 
     private String email;
     private  String password;

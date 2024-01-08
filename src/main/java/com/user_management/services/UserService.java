@@ -25,7 +25,7 @@ public class UserService {
     // End of Check User Email Services Method
 
     // Check User Password Services Method
-    public List<String> checkUserPasswordByEmail(String email){
+    public String checkUserPasswordByEmail(String email){
         return userRepository.checkUserPasswordByEmail(email);
     }
     // End of Check User Password Services Method
