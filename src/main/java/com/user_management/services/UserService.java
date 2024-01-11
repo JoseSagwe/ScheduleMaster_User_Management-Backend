@@ -13,6 +13,11 @@ public class UserService {
 
     @Autowired
     UserRepository userRepository;
+
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
+
     public int registerNewUserServiceMethod(String fname, String lname, String email, String password){
         return userRepository.registerNewUser(fname,lname,email,password);
     }
@@ -24,11 +29,13 @@ public class UserService {
     }
     // End of Check User Email Services Method
 
+
     // Check User Password Services Method
     public String checkUserPasswordByEmail(String email){
         return userRepository.checkUserPasswordByEmail(email);
     }
     // End of Check User Password Services Method
+
 
     //Get User Details By Email
     public User getUserDetailsByEmail(String email){
