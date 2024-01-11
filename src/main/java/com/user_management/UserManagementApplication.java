@@ -21,15 +21,15 @@ public class UserManagementApplication {
 	//Cross Origin Requests
 	//Allow all requests only from http://localhost:3000/
 
-//	@Bean
-//	public WebMvcConfigurer corsConfigurer() {
-//		return new WebMvcConfigurer() {
-//			public void addCorsMappings(CorsRegistry registry) {
-//				registry.addMapping("/**")
-//						.allowedMethods("*")
-//						.allowedOrigins("*");
-//			}
-//		};
-//	}
+	@Bean
+	public WebMvcConfigurer corsConfigurer() {
+		return new WebMvcConfigurer() {
+			public void addCorsMappings(CorsRegistry registry) {
+				registry.addMapping("/**")
+						.allowedMethods("*")
+						.allowedOrigins("*");
+			}
+		};
+	}
 
 }
