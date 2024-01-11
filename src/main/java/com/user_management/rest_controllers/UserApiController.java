@@ -12,5 +12,5 @@ public class UserApiController {
     public String test(){
         return "The Rest First End point is working";
     }
-    
+
 }
