@@ -17,7 +17,6 @@ public class RegisterApiController {
     @Autowired
     UserService userService;
 
-
     @PostMapping("/user/register")
     public ResponseEntity registerNewUser(@RequestParam("first_name")String first_name,
                                           @RequestParam("last_name")String last_name,
@@ -27,6 +26,7 @@ public class RegisterApiController {
         if(first_name.isEmpty() || last_name.isEmpty() || email.isEmpty() || password.isEmpty()){
             return new ResponseEntity<>("Please Complete all Fields", HttpStatus.BAD_REQUEST);
         }
+
 
 
         // Encrypt / Hash  Password:
