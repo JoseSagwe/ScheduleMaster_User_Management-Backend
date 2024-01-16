@@ -27,8 +27,6 @@ public class RegisterApiController {
             return new ResponseEntity<>("Please Complete all Fields", HttpStatus.BAD_REQUEST);
         }
 
-
-
         // Encrypt / Hash  Password:
         String hashed_password = BCrypt.hashpw(password, BCrypt.gensalt());
 
