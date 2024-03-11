@@ -21,8 +21,10 @@ public class LoginApiController {
     @Autowired
     UserService userService;
 
+
     @PostMapping("/user/login")
     public ResponseEntity authenticateUser(@RequestBody Login login){
+
 
         //Get User Email
         List<String> userEmail = userService.checkUserEmail(login.getEmail());
@@ -33,6 +35,7 @@ public class LoginApiController {
             return new ResponseEntity("Email does not exist" , HttpStatus.NOT_FOUND);
         }
         // End of Check If Email is Empty
+
 
         //Get Hashed user Password
         String hashed_password = userService.checkUserPasswordByEmail(login.getEmail());
